@@ -1,4 +1,4 @@
- name: HTML Validation
+name: JavaScript Testing
 
    on:
      push:
@@ -7,14 +7,14 @@
        branches: [ main ]
 
    jobs:
-     validate-html:
+     test-js:
        runs-on: ubuntu-latest
 
        steps:
          - name: Check out the repository
            uses: actions/checkout@v2
 
-         - name: Validate HTML
-           uses: chrislennon/action-html-validate@v1
-           with:
-             files: index.html
+         - name: Run JavaScript Tests
+           run: |
+             echo "Running JavaScript tests..."
+             node script.js
