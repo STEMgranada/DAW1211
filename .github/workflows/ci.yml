@@ -1,0 +1,20 @@
+name: JavaScript Testing
+
+   on:
+     push:
+       branches: [ main ]
+     pull_request:
+       branches: [ main ]
+
+   jobs:
+     test-js:
+       runs-on: ubuntu-latest
+
+       steps:
+         - name: Check out the repository
+           uses: actions/checkout@v2
+
+         - name: Run JavaScript Tests
+           run: |
+             echo "Running JavaScript tests..."
+             node script.js
